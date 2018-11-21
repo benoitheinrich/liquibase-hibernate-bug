@@ -44,7 +44,7 @@
                     <password>${db.password}</password>
                     <changeLogFile>src/main/resources/liquibase/changelog-master.xml</changeLogFile>
                     <!-- This file will be created and will need to be moved to the correct place with the right name -->
-                    <diffChangeLogFile>src/main/resources/liquibase/liquibase-diff-changeLog.xml</diffChangeLogFile>
+                    <diffChangeLogFile>liquibase-diff-changeLog.xml</diffChangeLogFile>
                     <referenceUrl>hibernate:spring:com.stuff?dialect=${db.dialect}</referenceUrl>
                     <verbose>false</verbose>
                     <logging>WARN</logging>
