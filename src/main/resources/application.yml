@@ -1,0 +1,29 @@
+# https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: @db.driver@
+    url: @db.url@
+    username: @db.username@
+    password: @db.password@
+    maximumPoolSize: 20
+    connectionTestQuery: ROLLBACK
+    transactionIsolation: READ_COMMITTED
+
+  liquibase:
+    change-log: classpath:liquibase/changelog-master.xml
+    databaseChangeLogTable: SOME_DATABASECHANGELOG
+    databaseChangeLogLockTable: SOME_DATABASECHANGELOGLOCK
+
+  #Turn Statistics on
+  jpa:
+    hibernate:
+      ddl-auto: validate
+      naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    open-in-view: false
+    show-sql: false
+    properties.hibernate:
+      generate_statistics: false
+      format_sql: true

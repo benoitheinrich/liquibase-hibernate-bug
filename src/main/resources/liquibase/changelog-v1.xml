@@ -1,0 +1,29 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd"
+                   logicalFilePath="changelog-v1.xml">
+    <changeSet author="benoit (generated)" id="1542805299139-1">
+        <createTable tableName="AN_ENTITY">
+            <column autoIncrement="true" name="ID" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="AN_ENTITYPK"/>
+            </column>
+            <column name="DATE_TIME" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DETAILS" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FILENAME" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="USERNAME" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="benoit (generated)" id="1542805299139-2">
+        <createIndex indexName="AN_ENTITY_DATETIME" tableName="AN_ENTITY">
+            <column name="DATE_TIME"/>
+        </createIndex>
+    </changeSet>
+</databaseChangeLog>
