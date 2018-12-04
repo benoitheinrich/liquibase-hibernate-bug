@@ -18,7 +18,7 @@ interface IgnorableChange extends HibernateOverrideChange {
 
     default void removeIgnorableDifference(final ObjectDifferences differences, final String name, Predicate<Object> isIgnorable) {
         final Difference diff = differences.getDifference(name);
-        if (diff.getReferenceValue() == null && isIgnorable.test(diff.getComparedValue())) {
+        if (diff != null && diff.getReferenceValue() == null && isIgnorable.test(diff.getComparedValue())) {
             differences.removeDifference(name);
         }
     }
